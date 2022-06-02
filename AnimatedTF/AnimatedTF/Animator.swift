@@ -118,9 +118,8 @@ extension Animator {
         let totalFrames = floor(refreshFrequency * duration)
         let currentFrame = floor(refreshFrequency * timeElapsed)
         let spring = DampedSpring(frequencyResponse: totalFrames/2.0, dampingRatio: dampingRatio)
-        var ratio = spring.calculatePosition(at: currentFrame, initialPosition: 1.0)
-        ratio = fmax(0.0, ratio)
-        let percent = (-1 * ratio)
+        var percent = spring.calculatePosition(at: currentFrame, initialPosition: -1.0)
+        percent = fmin(0.0, percent)
         return percent * verticalDisplacement
     }
 }
