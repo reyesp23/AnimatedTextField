@@ -1,2 +1,2 @@
 # AnimatedTextField
-<img src="hello-there.gif" width="200">
+<img src="hello.gif" width="200">
