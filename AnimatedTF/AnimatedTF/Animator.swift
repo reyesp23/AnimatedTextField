@@ -96,8 +96,10 @@ extension Animator {
         switch type {
         case .linear(_):
             return f_linear(t: timeElapsed)
-        case .spring(let ratio, _):
-            return f_damped(t: timeElapsed, dampingRatio: ratio)
+        case .spring(let ratio, let response):
+            return f_damped(t: timeElapsed,
+                            dampingRatio: ratio,
+                            response: response)
         }
     }
     
@@ -111,13 +113,15 @@ extension Animator {
         return percent * verticalDisplacement
     }
     
-    private func f_damped(t timeElapsed: CGFloat, dampingRatio: CGFloat) -> CGFloat {
+    private func f_damped(t timeElapsed: CGFloat,
+                          dampingRatio: CGFloat,
+                          response: CGFloat) -> CGFloat {
         guard let displayLink = displayLink else { return 0.0 }
         let refreshPeriod = (displayLink.targetTimestamp - displayLink.timestamp)
         let refreshFrequency = 1 / refreshPeriod
-        let totalFrames = floor(refreshFrequency * duration)
+        let frequencyResponse = floor(refreshFrequency * response)
         let currentFrame = floor(refreshFrequency * timeElapsed)
-        let spring = DampedSpring(frequencyResponse: totalFrames/2.0, dampingRatio: dampingRatio)
+        let spring = DampedSpring(frequencyResponse: frequencyResponse, dampingRatio: dampingRatio)
         var percent = spring.calculatePosition(at: currentFrame, initialPosition: -1.0)
         percent = fmin(0.0, percent)
         return percent * verticalDisplacement
