@@ -129,9 +129,7 @@ extension Animator {
 }
 
 fileprivate extension NSMutableAttributedString {
-    func setAtttributes(baselineOffset: CGFloat,
-                        foregroundColor: UIColor = UIColor.white,
-                        backgroundColor: UIColor = UIColor.black) -> NSMutableAttributedString {
+    func setAtttributes(baselineOffset: CGFloat) -> NSMutableAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [.baselineOffset: baselineOffset]
         
         self.setAttributes(attributes, range: NSRange.last(in: self.string))
