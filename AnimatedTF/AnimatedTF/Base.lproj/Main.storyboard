@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnimatedTF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7BF-fi-VfR" customClass="AnimatedTextField" customModule="DWAnimatedLabelDemo" customModuleProvider="target">
+                                <rect key="frame" x="10" y="184" width="394" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DMr-Ol-tNY"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Text">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="f9j-jc-48e"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7BF-fi-VfR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="OfW-C4-f20"/>
+                            <constraint firstItem="7BF-fi-VfR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="c9W-iw-NNA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7BF-fi-VfR" secondAttribute="trailing" constant="10" id="jFG-bU-IJl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textfield" destination="7BF-fi-VfR" id="9fB-bU-aVN"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="14" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
